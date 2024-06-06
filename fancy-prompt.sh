@@ -7,6 +7,10 @@ esac
 
 if [ "$fancy_prompt" = yes ]; then
 
+    # in some cases, $USER and $HOSTNAME are not set, so we use "whoami" and "hostname" instead
+    USER=${USER:-$(whoami)}
+    HOSTNAME=${HOSTNAME:-$(hostname)}
+
     # calculate user's color with sha256
     _hypercube_ps1_user_color=$((0x$(echo -n "user-${USER}" | sha256sum | head -c 6)))
     # format: "%d;%d;%d"
