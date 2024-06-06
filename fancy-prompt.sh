@@ -45,7 +45,7 @@ if [ "$fancy_prompt" = yes ]; then
             else
                 ds="$((duration/86400))d$((duration%86400/3600))h$((duration%3600/60))m$((duration%60))s"
             fi
-            # if duration is longer than 30 seconds, add a exclamation mark and ring the bell by printing "\a"
+            # if duration is longer than 30 seconds, add an exclamation mark and ring the bell by printing "\a"
             if ((duration>30)); then
                 ds="$ds!\a"
             fi
